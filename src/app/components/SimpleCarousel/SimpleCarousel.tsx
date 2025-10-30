@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useEffect } from "react";
-import styles from "./SimpleCarousel.module.css";
+import styles from "./SimpleCarouser.module.css";
 
 export default function SimpleCarousel() {
     const ref = useRef<HTMLDivElement>(null);

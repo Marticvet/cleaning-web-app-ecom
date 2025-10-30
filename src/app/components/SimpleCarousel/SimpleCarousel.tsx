@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 
 export default function SimpleCarousel() {
   const ref = useRef<HTMLDivElement>(null);
@@ -13,9 +13,15 @@ export default function SimpleCarousel() {
   const scroll = (dir: -1 | 1) => {
     const el = ref.current;
     if (!el) return;
-    const amount = el.clientWidth * dir; // one slide at a time
+    const amount = el.clientWidth * dir;
     el.scrollBy({ left: amount, behavior: "smooth" });
   };
+
+  // ✅ Auto slide every 5 seconds
+  useEffect(() => {
+    const id = setInterval(() => scroll(1), 5000);
+    return () => clearInterval(id);
+  }, []);
 
   return (
     <div className="carousel">
@@ -48,13 +54,18 @@ export default function SimpleCarousel() {
           scroll-snap-type: x mandatory;
           scroll-behavior: smooth;
           -webkit-overflow-scrolling: touch;
+          scrollbar-width: none;
+        }
+        .track::-webkit-scrollbar {
+          display: none;
         }
         .slide {
           flex: 0 0 100%;
           width: 100%;
           height: 100%;
-          object-fit: cover;   /* SVG will scale nicely */
+          object-fit: contain;
           scroll-snap-align: center;
+          background: white;
         }
         .nav {
           position: absolute;

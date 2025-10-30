@@ -1,0 +1,26 @@
+.navbarWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: white;
+    width: 100vw;
+    padding: 0 16px;
+    height: 2.8rem;
+}
+
+.navButtonsWrapper {
+    display: grid;
+    grid-auto-flow: column;
+    /* lay items left → right */
+    grid-auto-columns: max-content;
+    /* size to content */
+    align-items: center;
+    gap: 12px;
+}
+
+.navButton {
+    font-size: 1.2rem;
+}

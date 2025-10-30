@@ -47,7 +47,7 @@ export default function Home() {
         <div className={styles.homeWrapper}>
             <SimpleCarousel />
             <div className={styles.servicesWrapper}>
-                {services.map((service, inx) => {
+                {services.map((service) => {
                     return (
                         <div
                             key={service.title}

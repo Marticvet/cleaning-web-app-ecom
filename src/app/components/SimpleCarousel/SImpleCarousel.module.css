@@ -4,27 +4,27 @@
     height: clamp(320px, 60vh, 720px);
     overflow: hidden;
     border-radius: 16px;
-}
-
-.track {
+  }
+  
+  .track {
     display: flex;
     height: 100%;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
-}
-
-.slide {
+  }
+  
+  .slide {
     flex: 0 0 100%;
     width: 100%;
     height: 100%;
     object-fit: contain;
     scroll-snap-align: center;
     background: white;
-}
-
-.nav {
+  }
+  
+  .nav {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -39,16 +39,17 @@
     display: grid;
     place-items: center;
     z-index: 2;
-}
-
-.nav:hover {
+  }
+  
+  .nav:hover {
     background: rgba(0, 0, 0, 0.6);
-}
-
-.left {
+  }
+  
+  .left {
     left: 12px;
-}
-
-.right {
+  }
+  
+  .right {
     right: 12px;
-}
+  }
+  

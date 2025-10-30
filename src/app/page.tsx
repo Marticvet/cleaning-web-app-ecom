@@ -70,6 +70,21 @@ export default function Home() {
                     );
                 })}
             </div>
+
+            <div className={styles.ourServicesWrapper}>
+                <h1>Our Services</h1>
+                <p>
+                    {`
+                    At Deep Cleaning, we offer a comprehensive range of cleaning
+                    services tailored to the unique needs of your space. Whether
+                    it's your home, hotel, glass surfaces, or public roads in
+                    Germany, our expert team ensures thorough and meticulous
+                    cleaning. We use advanced techniques and eco-friendly
+                    products to deliver exceptional results, making your
+                    environment safe, fresh, and inviting.
+                    `}
+                </p>
+            </div>
         </div>
     );
 }

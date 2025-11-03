@@ -5,10 +5,20 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    background-color: white;
-    width: 100vw;
+
+    background-color: rgb(251, 251, 251);
+    width: 100%;
+    /* was 100vw */
     padding: 0 16px;
     height: 2.8rem;
+
+    /* always-on elevation */
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.08),
+        0 2px 6px rgba(0, 0, 0, 0.06);
+    transition: background-color .2s ease;
+    /* no transform/box-shadow change now */
+    backdrop-filter: saturate(140%) blur(6px);
 }
 
 .navButtonsWrapper {
@@ -23,4 +33,30 @@
 
 .navButton {
     font-size: 1.2rem;
+}
+
+.navbarWrapper:hover {
+    /* a touch more lift on hover */
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.08),
+        0 2px 6px rgba(0, 0, 0, 0.06);
+    /* transform: translateY(-1px); */
+}
+
+/* optional: crisper look on light backgrounds */
+.navbarWrapper {
+    backdrop-filter: saturate(140%) blur(6px);
+}
+
+/* If you have nav links, add a clean hover */
+.navLinks a {
+    color: #0f172a;
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 8px;
+    transition: background-color .15s ease, color .15s ease;
+}
+
+.navLinks a:hover {
+    background-color: rgba(15, 23, 42, 0.06);
 }

@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 32px;
 }
 
 /* .servicesWrapper {
@@ -150,6 +151,22 @@
         width: min(100% - 6rem, 1200px);
         gap: 20px;
     }
+}
+
+
+.cleaningServicesButton {
+    background-color: rgb(49, 119, 233);
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 16px;
+}
+
+.cleaningServicesButton > a {
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-align: center;
+    text-wrap: wrap;
 }
 
 /* .servicesWrapper>.serviceCardWrapper {

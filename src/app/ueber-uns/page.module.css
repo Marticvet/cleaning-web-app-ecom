@@ -1,11 +1,323 @@
 .ueberUnsWrapper {
-    background-color: red;
-    height: 100vh;
+    /* background-color: red; */
+    /* height: 100vh; */
+    flex-grow: 1;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    padding: 16px;
+    gap: 16px;
+
+    /* margin-top: 200px; */
 }
 
-.ueberUnsWrapper > h1 {
-    color: white;
+.cleaningServicesImageContainer {
+    /* full-bleed across the viewport */
+    width: 100vw;
+    height: 100vh;
+
+    position: relative;
+    overflow: hidden;
+    /* center the 100vw block even if page content is centered/narrow */
+    /* margin-left: calc(50% - 50vw); */
+    /* margin-right: calc(50% - 50vw); */
+    /* margin: 32px 0; */
 }
+
+.cleaningServicesImageContainer>h2 {
+    position: absolute;
+    top: 200px;
+    left: 20vw;
+    color: rgb(25, 30, 132);
+    background-color: rgb(159, 159, 159);
+    padding: 8px;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 2rem;
+}
+
+/* make the Next/Image fill the box nicely */
+.cleaningServicesImageContainer :global(img) {
+    object-fit: cover;
+    /* fills, crops if needed (use 'contain' for SVGs) */
+    object-position: center;
+}
+
+/* --- Content wrapper under the hero --- */
+.ueberUnsWrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    /* Let content flow naturally (better for long text) */
+    align-items: stretch;
+    justify-content: flex-start;
+
+    /* Fluid page width + comfy padding */
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    padding: clamp(16px, 4vw, 32px);
+    /* padding: 0 auto; */
+    gap: clamp(12px, 2vw, 20px);
+}
+
+/* --- Full-bleed hero at the very top --- */
+.cleaningServicesImageContainer {
+    /* full-bleed across the viewport without causing a horizontal scrollbar */
+    width: 100vw;
+    /* Responsive height: min 280px, usually 40% of viewport, cap ~560px */
+    height: clamp(280px, 40dvh, 560px);
+
+    position: relative;
+    overflow: hidden;
+
+    /* center the 100vw block inside a centered page */
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+
+    /* push hero below a sticky/fixed navbar */
+    margin-top: var(--nav-h);
+}
+
+/* Fallback for browsers without dynamic viewport units */
+@supports not (height: 40dvh) {
+    .cleaningServicesImageContainer {
+        height: clamp(280px, 40vh, 560px);
+    }
+}
+
+/* Make the Next/Image fill the hero nicely */
+.cleaningServicesImageContainer :global(img) {
+    object-fit: cover;
+    /* fill hero; may crop edges (best for photos) */
+    object-position: center;
+}
+
+/* Optional: if you’re using SVG illustrations and prefer no cropping,
+   temporarily switch to 'contain' on very small screens */
+@media (max-width: 480px) {
+    .cleaningServicesImageContainer :global(img) {
+        object-fit: contain;
+        background: #fff;
+        /* avoids transparent gaps around SVGs */
+    }
+}
+
+.ourStoryContainer {
+    /* background-color: yellow; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    padding: 0 auto;
+    height: 400px;
+    margin: 32px auto;
+    max-width: 1250px;
+}
+
+.ourStoryContainer>.leftInnerContainer {
+    width: 50vw;
+    display: grid;
+    gap: 8px;
+    grid-template-columns: repeat(2, 250px);
+    /* grid-auto-rows: 250px; */
+}
+
+.ourStoryContainer>.leftInnerContainer>div {
+    /* background-color: red; */
+    border-radius: 8px;
+}
+
+.firstLeftInnerContainer {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 1;
+
+    align-content: center;
+    justify-items: center;
+}
+
+.secondLeftInnerContainer {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 2;
+    grid-row-end: 2;
+
+    align-content: center;
+    justify-items: center;
+}
+
+.ourStoryContainer>.rightInnerContainer {
+    width: 50vw;
+}
+
+.rightInnerContiner {
+    /* background-color: blue; */
+    height: inherit;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    margin-left: 32px;
+    padding: 0 12px;
+}
+
+.rightInnerContiner>h6 {
+    background-color: rgb(233, 185, 112);
+    border-radius: 8px;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 800;
+    text-align: center;
+    width: 150px;
+}
+
+.rightInnerContiner>h2 {
+    font-size: 1.55rem;
+    color: rgb(56, 56, 225);
+    font-weight: 700;
+
+}
+
+.rightInnerContiner>p {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: rgba(132, 132, 132, 0.927);
+}
+
+.rightInnerContiner>a {
+    background-color: rgb(255, 149, 0);
+    width: 150px;
+    text-align: center;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+}
+
+/* chat */
+
+
+/* < 992px */
+@media (max-width: 992px) {
+
+    /* let the section grow; single-column layout */
+    .ourStoryContainer {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        height: auto;
+        /* override any fixed height */
+        margin: 24px auto;
+        max-width: 700px;
+        align-items: start;
+    }
+
+    /* stack the image cards vertically and center them */
+    .leftInnerContainer {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+        justify-items: center;
+        /* center each card */
+        align-items: start;
+        background-color: transparent;
+        /* remove debug colors */
+    }
+
+    /* natural order; tidy card styling */
+    .firstLeftInnerContainer,
+    .secondLeftInnerContainer {
+        grid-column: auto;
+        grid-row: auto;
+        display: block;
+        width: 100%;
+        max-width: 360px;
+        /* tweak 320–420px if desired */
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    /* make images fluid */
+    .leftInnerContainer img,
+    .firstLeftInnerContainer img,
+    .secondLeftInnerContainer img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    /* put the text below the images with comfy spacing */
+    .rightInnerContiner {
+        grid-column: 1 / -1;
+        margin-left: 0;
+        padding: 0 12px;
+        gap: 14px;
+    }
+}
+
+/* < 577px — hard-stack images as a centered flex column */
+@media (max-width: 576px) {
+    /* Make the section a single column and allow it to grow */
+    .ourStoryContainer {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      gap: 20px;
+      height: auto !important;
+      margin: 20px auto;
+    }
+  
+    /* Switch the images container to flex column */
+    .ourStoryContainer .leftInnerContainer {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 16px;
+      width: 100%;
+    }
+  
+    /* Reset any grid placement on the two image wrappers */
+    .ourStoryContainer .firstLeftInnerContainer,
+    .ourStoryContainer .secondLeftInnerContainer {
+      grid-column: auto !important;
+      grid-row: auto !important;
+      width: 100%;
+      max-width: 360px; /* tweak 320–420px if you like */
+      display: block;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+  
+    /* Next/Image often wraps <img> in a <span>; make both fluid */
+    .ourStoryContainer .leftInnerContainer :global(span),
+    .ourStoryContainer .leftInnerContainer :global(img) {
+      display: block;
+      width: 100% !important;
+      height: auto !important;
+    }
+  
+    /* If your images use object-fit: cover, keep it tidy */
+    .ourStoryContainer .leftInnerContainer :global(img) {
+      object-fit: cover;
+    }
+  
+    /* Put the text column below the images */
+    .ourStoryContainer .rightInnerContiner {
+      grid-column: 1 / -1 !important;
+      padding: 0 12px;
+      gap: 14px;
+    }
+  }
+  

@@ -84,6 +84,10 @@ export default function Home() {
                     environment safe, fresh, and inviting.
                     `}
                 </p>
+
+                <div className={styles.cleaningServicesButton}>
+                    <Link href={""}>BOOK OUR CLEANING SERVICES</Link>
+                </div>
             </div>
         </div>
     );

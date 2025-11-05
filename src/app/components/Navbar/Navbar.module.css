@@ -5,51 +5,35 @@
     position: sticky;
     top: 0;
     z-index: 100;
-
     background-color: rgb(251, 251, 251);
     width: 100%;
-    /* was 100vw */
     padding: 0 16px;
     height: 2.8rem;
-
-    /* always-on elevation */
     box-shadow:
         0 8px 24px rgba(0, 0, 0, 0.08),
         0 2px 6px rgba(0, 0, 0, 0.06);
-    transition: background-color .2s ease;
-    /* no transform/box-shadow change now */
     backdrop-filter: saturate(140%) blur(6px);
 }
 
+/* Brand */
+.brand a {
+    color: #0f172a;
+    text-decoration: none;
+    font-weight: 800;
+    letter-spacing: .2px;
+}
+
+/* Desktop links */
 .navButtonsWrapper {
     display: grid;
     grid-auto-flow: column;
-    /* lay items left → right */
     grid-auto-columns: max-content;
-    /* size to content */
     align-items: center;
     gap: 12px;
 }
 
 .navButton {
-    font-size: 1.2rem;
-}
-
-.navbarWrapper:hover {
-    /* a touch more lift on hover */
-    box-shadow:
-        0 8px 24px rgba(0, 0, 0, 0.08),
-        0 2px 6px rgba(0, 0, 0, 0.06);
-    /* transform: translateY(-1px); */
-}
-
-/* optional: crisper look on light backgrounds */
-.navbarWrapper {
-    backdrop-filter: saturate(140%) blur(6px);
-}
-
-/* If you have nav links, add a clean hover */
-.navLinks a {
+    font-size: 1.05rem;
     color: #0f172a;
     text-decoration: none;
     padding: 6px 10px;
@@ -57,6 +41,118 @@
     transition: background-color .15s ease, color .15s ease;
 }
 
-.navLinks a:hover {
+.navButton:hover {
     background-color: rgba(15, 23, 42, 0.06);
+}
+
+/* Hamburger button (hidden on desktop) */
+.hamburger {
+    display: none;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 8px;
+    z-index: 101;
+}
+
+.hamburger:hover {
+    background: rgba(15, 23, 42, 0.06);
+}
+
+.hamburgerIcon {
+    display: block;
+    width: 26px;
+    height: 26px;
+    stroke: #0f172a;
+    fill: none;
+    pointer-events: none;
+}
+
+/* Mobile menu panel (hidden by default) */
+.mobileMenu {
+    position: fixed;
+    top: 2.8rem;
+    /* directly under navbar */
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+    display: none;
+    flex-direction: column;
+    padding: 10px 16px 16px;
+    gap: 8px;
+    transform: translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .18s ease, opacity .18s ease;
+    z-index: 99;
+}
+
+.mobileLink {
+    display: block;
+    padding: 12px 10px;
+    border-radius: 10px;
+    color: #0f172a;
+    text-decoration: none;
+    font-size: 1.05rem;
+}
+
+.mobileLink:hover {
+    background: rgba(15, 23, 42, 0.06);
+}
+
+/* Backdrop behind mobile menu */
+.scrim {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.25);
+    z-index: 98;
+}
+
+/* ---------- Under 993px: hamburger on, desktop links off ---------- */
+@media (max-width: 992px) {
+    .navButtonsWrapper {
+        display: none;
+    }
+
+    .hamburger {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mobileMenu {
+        display: flex;
+    }
+
+    .mobileMenu.open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
+@media (max-width: 992px) {
+    .navButtonsWrapper {
+        display: none;
+    }
+
+    .hamburger {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mobileMenu {
+        display: flex;
+    }
+
+    .mobileMenu.open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
 }

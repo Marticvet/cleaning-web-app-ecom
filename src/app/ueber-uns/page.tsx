@@ -1,26 +1,21 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 import Image from "next/image";
+import ImageTopBackground from "../components/ImageTopBackground/ImageTopBackground";
+
+const src = "/images/Cleaning_Carpet-4-scaled.jpeg";
+const alt = "Cleaning Services Image";
+const headerText =
+    "Transform your house into your dream home with our expert services.";
 
 export default function UeberUnsPage() {
     return (
         <div className={styles.ueberUnsWrapper}>
-            <div className={styles.cleaningServicesImageContainer}>
-                {/* <h1>Über uns</h1> */}
-
-                <Image
-                    src="/images/Cleaning_Carpet-4-scaled.jpeg"
-                    alt="Cleaning Services Image"
-                    fill // <-- fills the 40vh container
-                    priority
-                    sizes="100vw"
-                />
-
-                <h2>
-                    Transform your house into your dream home with our expert
-                    services.
-                </h2>
-            </div>
+            <ImageTopBackground
+                srcPath={src}
+                altText={alt}
+                headerText={headerText}
+            />
 
             <div className={styles.ourStoryContainer}>
                 <div className={styles.leftInnerContainer}>

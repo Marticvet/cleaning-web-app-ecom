@@ -1,0 +1,323 @@
+.kontaktPageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* margin: 100px; */
+}
+
+.kontaktFormContainer {
+    display: flex;
+    /* width: 100vw; */
+    gap: 64px;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 64px;
+    /* margin-bottom: 100px;
+    margin-top: 64px; */
+}
+
+.leftKontaktFormContnaner {
+    height: 700px;
+    width: 300px;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    gap: 32px;
+
+}
+
+.leftKontaktFormInnerContainer {
+    /* width: 100vw; */
+    height: 200px;
+    /* min-height: 25%; */
+    background-color: #edf5ff;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    border-radius: 12px;
+}
+
+.leftKontaktFormInnerContainer>h2 {
+    color: rgba(4, 4, 114, 0.707);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.leftKontaktFormInnerContainer>h3 {
+    color: rgba(50, 50, 228, 0.724);
+    font-weight: 500;
+    font-size: .96rem;
+    text-align: center;
+}
+
+.iconContainer {
+    border: 1px;
+    background: white;
+    padding: 8px;
+    border-radius: 12px;
+}
+
+.rightKontaktFormContnaner {
+    background-color: yellow;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    /* height: 60vh; */
+    /* height: 660px; */
+    width: 540px;
+    max-width: 900px;
+    min-width: 500px;
+}
+
+.rightKontaktFormContnaner > h2 {
+    color: rgba(4, 4, 114, 0.707);
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+@media (max-width: 992px) {
+    .kontaktFormContainer {
+        margin: 0;
+        margin: 60px 0;
+        flex-direction: column;
+    }
+
+    .leftKontaktFormContnaner {
+        display: grid;
+        gap: 32px;
+        grid-template-columns: 250px 250px;
+        grid-template-rows: 200px;
+    }
+
+    .leftKontaktFormInnerContainer {
+        height: 200px;
+    }
+
+    .rightKontaktFormContnaner {
+        height: 75vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .kontaktFormContainer {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    /* .kontaktFormContainer {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    } */
+
+    .leftKontaktFormContnaner {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .rightKontaktFormContnaner {
+        max-width: 480px;
+    }
+}
+
+/* right container */
+
+/* --- Kontakt form panel (keep display: flex) --- */
+.rightKontaktFormContnaner {
+    background-color: #eaf1ff;         
+    height: auto;                       
+    /* width: 500px; */
+    max-width: 950px;
+    min-width: 320px;                  
+    padding: 24px;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    gap: 10px;                          
+  }
+  
+  .rightKontaktFormContnaner > h2 {
+    text-align: center;
+    color: #0e1848;
+    font-weight: 800;
+    font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+    margin: 6px 0 8px;
+  }
+  
+  .rightKontaktFormContnaner > p {
+    text-align: center;
+    color: #2c2f3a;
+    line-height: 1.65;
+    margin: 0 0 8px;
+  }
+  
+  /* --- form layout (single column) --- */
+  .contactForm {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 4px;
+  }
+  
+  /* labels + required star */
+  .formLabel {
+    font-weight: 700;
+    text-transform: lowercase;
+    color: #1e2a44;
+    font-size: 0.98rem;
+  }
+  .required { color: #ff4d4f; }
+  
+  /* inputs & textarea */
+  .formInput,
+  .formTextarea {
+    width: 100%;
+    border: 1px solid #dfe3ee;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 1rem;
+    color: #1c2233;
+  }
+  .formInput::placeholder,
+  .formTextarea::placeholder { color: #9aa3b2; }
+  .formInput:focus,
+  .formTextarea:focus {
+    outline: 2px solid #3c4bd8;
+    outline-offset: 0;
+    border-color: transparent;
+  }
+  .formTextarea { min-height: 160px; resize: vertical; }
+  
+  /* file input (native but aligned) */
+  .formFile {
+    width: 100%;
+    border: 1px solid #dfe3ee;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+  
+  /* submit button */
+  .formSubmit {
+    margin-top: 6px;
+    width: 100%;
+    height: 48px;
+    border: 0;
+    border-radius: 10px;
+    background: #3043cf;
+    color: #ffffff;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+    box-shadow: 0 6px 18px rgba(48,67,207,0.25);
+  }
+  .formSubmit:hover { transform: translateY(-1px); }
+  .formSubmit:active { transform: translateY(0); opacity: 0.92; }
+  .formSubmit:focus-visible { outline: 2px solid #111; outline-offset: 3px; }
+  
+  /* --- responsiveness tied to your breakpoints --- */
+  @media (max-width: 992px) {
+    .rightKontaktFormContnaner {
+      width: 100%;
+      max-width: 720px;
+      padding: 24px;
+    }
+  }
+  @media (max-width: 576px) {
+    .rightKontaktFormContnaner {
+      width: 100%;
+      max-width: 480px;
+      padding: 20px;
+      border-radius: 12px;
+    }
+  }
+  
+
+  /* ===== Large-screen polish (keeps your layout as-is) ===== */
+
+/* Give the whole Kontakt area a sensible max width and center it */
+@media (min-width: 1200px) {
+    .kontaktFormContainer {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 24px;
+      padding-right: 24px;
+      gap: 42px; /* a bit more air between left + right columns */
+    }
+  
+    /* Left cards column — keep same layout, just constrain width */
+    .leftKontaktFormContnaner {
+      max-width: 360px;
+      margin-left: auto;
+      margin-right: 0;
+      gap: 18px;
+    }
+  
+    /* Form panel — stay centered, comfortable width on desktop */
+    .rightKontaktFormContnaner {
+      width: 680px;         /* was too narrow on ultrawide; still not full-width */
+      max-width: 720px;     /* safety cap */
+      margin-left: auto;
+      margin-right: auto;
+      padding: 36px;        /* more inner breathing */
+      border-radius: 14px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+      gap: 12px;            /* spacing between heading/paragraphs/form */
+    }
+  
+    .rightKontaktFormContnaner h2 {
+      font-size: 2.1rem;
+      margin-bottom: 10px;
+    }
+  
+    /* Keep paragraph measure readable */
+    .rightKontaktFormContnaner p {
+      max-width: 62ch;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+  
+    /* Inputs feel cramped on large screens — add padding and spacing */
+    .contactForm { gap: 16px; }
+    .formInput,
+    .formTextarea { padding: 16px 18px; font-size: 1.02rem; }
+    .formTextarea { min-height: 180px; }
+    .formSubmit { height: 52px; letter-spacing: 0.09em; }
+  }
+  
+  /* Ultra-wide monitors: gently scale without going huge */
+  @media (min-width: 1400px) {
+    .kontaktFormContainer { max-width: 1280px; }
+  
+    .leftKontaktFormContnaner { max-width: 380px; }
+  
+    .rightKontaktFormContnaner {
+      width: 720px;
+      padding: 40px;
+    }
+  
+    .rightKontaktFormContnaner h2 { font-size: 2.2rem; }
+    .rightKontaktFormContnaner p { max-width: 60ch; }
+  }
+  

@@ -15,19 +15,21 @@
     /* margin-top: 200px; */
 }
 
-.cleaningServicesImageContainer {
-    /* full-bleed across the viewport */
+/* .cleaningServicesImageContainer {
     width: 100vw;
     height: 100vh;
-
     position: relative;
     overflow: hidden;
-    /* center the 100vw block even if page content is centered/narrow */
-    /* margin-left: calc(50% - 50vw); */
-    /* margin-right: calc(50% - 50vw); */
-    /* margin: 32px 0; */
-}
 
+} */
+
+/* full-bleed across the viewport */
+/* center the 100vw block even if page content is centered/narrow */
+/* margin-left: calc(50% - 50vw); */
+/* margin-right: calc(50% - 50vw); */
+/* margin: 32px 0; */
+
+/*  
 .cleaningServicesImageContainer>h2 {
     position: absolute;
     top: 200px;
@@ -39,13 +41,14 @@
     font-weight: 800;
     font-size: 2rem;
 }
+*/
 
 /* make the Next/Image fill the box nicely */
-.cleaningServicesImageContainer :global(img) {
+/* .cleaningServicesImageContainer :global(img) {
     object-fit: cover;
-    /* fills, crops if needed (use 'contain' for SVGs) */
     object-position: center;
-}
+} */
+/* fills, crops if needed (use 'contain' for SVGs) */
 
 /* --- Content wrapper under the hero --- */
 .ueberUnsWrapper {
@@ -66,46 +69,41 @@
 }
 
 /* --- Full-bleed hero at the very top --- */
-.cleaningServicesImageContainer {
-    /* full-bleed across the viewport without causing a horizontal scrollbar */
+/* .cleaningServicesImageContainer {
     width: 100vw;
-    /* Responsive height: min 280px, usually 40% of viewport, cap ~560px */
     height: clamp(280px, 40dvh, 560px);
 
     position: relative;
     overflow: hidden;
 
-    /* center the 100vw block inside a centered page */
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
 
-    /* push hero below a sticky/fixed navbar */
     margin-top: var(--nav-h);
-}
+} */
 
 /* Fallback for browsers without dynamic viewport units */
-@supports not (height: 40dvh) {
+/* @supports not (height: 40dvh) {
     .cleaningServicesImageContainer {
         height: clamp(280px, 40vh, 560px);
     }
-}
+} */
 
 /* Make the Next/Image fill the hero nicely */
-.cleaningServicesImageContainer :global(img) {
+/* .cleaningServicesImageContainer :global(img) {
     object-fit: cover;
-    /* fill hero; may crop edges (best for photos) */
     object-position: center;
-}
+} */
+/* fill hero; may crop edges (best for photos) */
 
 /* Optional: if you’re using SVG illustrations and prefer no cropping,
    temporarily switch to 'contain' on very small screens */
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
     .cleaningServicesImageContainer :global(img) {
         object-fit: contain;
         background: #fff;
-        /* avoids transparent gaps around SVGs */
     }
-}
+} */
 
 .ourStoryContainer {
     /* background-color: yellow; */
@@ -127,7 +125,7 @@
     /* grid-auto-rows: 250px; */
 }
 
-.ourStoryContainer>.leftInnerContainer>div {
+.ourStoryContainer>.leftInnerContainer>img {
     /* background-color: red; */
     border-radius: 8px;
 }
@@ -195,7 +193,7 @@
     background-color: rgb(255, 149, 0);
     width: 150px;
     text-align: center;
-    height: 32px;
+    height: 36px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -205,8 +203,6 @@
 }
 
 /* chat */
-
-
 /* < 992px */
 @media (max-width: 992px) {
 
@@ -269,55 +265,139 @@
 
 /* < 577px — hard-stack images as a centered flex column */
 @media (max-width: 576px) {
+
     /* Make the section a single column and allow it to grow */
     .ourStoryContainer {
-      display: grid !important;
-      grid-template-columns: 1fr !important;
-      gap: 20px;
-      height: auto !important;
-      margin: 20px auto;
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+        height: auto !important;
+        margin: 20px auto;
     }
-  
+
     /* Switch the images container to flex column */
     .ourStoryContainer .leftInnerContainer {
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 16px;
-      width: 100%;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 16px;
+        width: 100%;
     }
-  
+
     /* Reset any grid placement on the two image wrappers */
     .ourStoryContainer .firstLeftInnerContainer,
     .ourStoryContainer .secondLeftInnerContainer {
-      grid-column: auto !important;
-      grid-row: auto !important;
-      width: 100%;
-      max-width: 360px; /* tweak 320–420px if you like */
-      display: block;
-      border-radius: 12px;
-      overflow: hidden;
+        grid-column: auto !important;
+        grid-row: auto !important;
+        width: 100%;
+        max-width: 360px;
+        /* tweak 320–420px if you like */
+        display: block;
+        border-radius: 12px;
+        overflow: hidden;
     }
-  
+
     /* Next/Image often wraps <img> in a <span>; make both fluid */
     .ourStoryContainer .leftInnerContainer :global(span),
     .ourStoryContainer .leftInnerContainer :global(img) {
-      display: block;
-      width: 100% !important;
-      height: auto !important;
+        display: block;
+        width: 100% !important;
+        height: auto !important;
     }
-  
+
     /* If your images use object-fit: cover, keep it tidy */
     .ourStoryContainer .leftInnerContainer :global(img) {
-      object-fit: cover;
+        object-fit: cover;
     }
-  
+
     /* Put the text column below the images */
     .ourStoryContainer .rightInnerContiner {
-      grid-column: 1 / -1 !important;
-      padding: 0 12px;
-      gap: 14px;
+        grid-column: 1 / -1 !important;
+        padding: 0 12px;
+        gap: 14px;
     }
+}
+
+/* cleaningServicesImageContainer  */
+/* ensure true viewport height across devices */
+.cleaningServicesImageContainer {
+    display: grid;            /* center by grid */
+    place-items: center;      /* vertical + horizontal center */
+    height: 100svh;
+  }
+  @supports not (height: 100svh) {
+    .cleaningServicesImageContainer { height: 100vh; }
+  }
+  
+  /* make the heading a full-width, single-line bar centered in the image */
+  .cleaningServicesImageContainer > h2 {
+    position: relative;       /* not absolute */
+    left: auto; top: auto; transform: none;
+    z-index: 1;
+  
+    /* full width + single line */
+    width: 100%;
+    max-width: none;
+    white-space: nowrap;      /* force single line */
+    overflow: hidden;         /* prevent overflow */
+    text-overflow: ellipsis;  /* graceful clip if it’s too long */
+    text-align: center;
+  
+    /* readable sizing that scales with viewport so it stays one line */
+    font-weight: 800;
+    font-size: clamp(1rem, 4.2vw, 2.6rem);
+    line-height: 1.15;
+    letter-spacing: 0.2px;
+  
+    /* visual treatment */
+    color: #fff;
+    padding: clamp(8px, 1.2vw, 14px) clamp(12px, 2vw, 20px);
+    background: rgba(0,0,0,0.42);
+    border-radius: 0;         /* full-width bar look */
+    /* box-shadow: 0 6px 26px rgba(0,0,0,0.25); */
+  }
+  
+  /* tweak sizes per breakpoint to keep it on one line without wrapping */
+  
+  /* ≥576px (sm) */
+  @media (min-width: 576px) {
+    .cleaningServicesImageContainer > h2 {
+      font-size: clamp(1.1rem, 3.6vw, 2.8rem);
+    }
+  }
+  
+  /* ≥768px (md) */
+  @media (min-width: 768px) {
+    .cleaningServicesImageContainer > h2 {
+      font-size: clamp(1.2rem, 3vw, 3rem);
+    }
+  }
+  
+  /* ≥992px (lg) */
+  @media (min-width: 992px) {
+    .cleaningServicesImageContainer > h2 {
+      font-size: clamp(1.3rem, 2.4vw, 3.2rem);
+    }
+  }
+  
+  /* ≥1200px (xl) */
+  @media (min-width: 1200px) {
+    .cleaningServicesImageContainer > h2 {
+      font-size: clamp(1.4rem, 2vw, 3.4rem);
+    }
+  }
+  
+  /* ≥1400px (xxl) */
+  @media (min-width: 1400px) {
+    .cleaningServicesImageContainer > h2 {
+      font-size: clamp(1.5rem, 1.8vw, 3.6rem);
+    }
+  }
+  
+  /* keep the image covering the viewport */
+  .cleaningServicesImageContainer :global(img) {
+    object-fit: cover;
+    object-position: center;
   }
   

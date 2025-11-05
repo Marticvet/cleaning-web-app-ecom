@@ -5,11 +5,11 @@ import Image from "next/image";
 export default function UeberUnsPage() {
     return (
         <div className={styles.ueberUnsWrapper}>
-            <h1>Über uns</h1>
-
             <div className={styles.cleaningServicesImageContainer}>
+                {/* <h1>Über uns</h1> */}
+
                 <Image
-                    src="/images/cleaning service-cuate.svg"
+                    src="/images/Cleaning_Carpet-4-scaled.jpeg"
                     alt="Cleaning Services Image"
                     fill // <-- fills the 40vh container
                     priority
@@ -26,7 +26,7 @@ export default function UeberUnsPage() {
                 <div className={styles.leftInnerContainer}>
                     <div className={styles.firstLeftInnerContainer}>
                         <Image
-                            src="/images/cleaning service-cuate.svg"
+                            src="/images/Professional-House-Cleaning-Services-in-North-Ogden-Utah.jpg"
                             alt="Cleaning Services Image"
                             height={250}
                             width={250}
@@ -34,7 +34,7 @@ export default function UeberUnsPage() {
                     </div>
                     <div className={styles.secondLeftInnerContainer}>
                         <Image
-                            src="/images/cleaning service-cuate.svg"
+                            src="/images/whats-included-in-a-professional-house-cleaning-checklist-included-343704.jpg"
                             alt="Cleaning Services Image"
                             height={250}
                             width={250}

@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import styles from "./Navbar.module.css";
+import Image from "next/image";
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
@@ -45,7 +46,9 @@ export default function Navbar() {
     return (
         <header className={styles.navbarWrapper} ref={headerRef}>
             <div className={styles.brand}>
-                <Link href="/">Logo</Link>
+                <Link href="/">
+                <Image src={"/images/cleaning-tools.png"} alt="This is company's logo" width={32} height={32}/>
+                </Link>
             </div>
 
             {/* Desktop links */}

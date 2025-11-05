@@ -24,3 +24,14 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+:root { color-scheme: light; }
+
+@media (prefers-color-scheme: dark) {
+  /* safety net so nothing flips in dark-only environments */
+  :root, html, body {
+    background: #fff !important;
+    color: #111 !important;
+  }
+}

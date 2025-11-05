@@ -1,6 +1,7 @@
 import Image from "next/image";
 import ImageTopBackground from "../components/ImageTopBackground/ImageTopBackground";
 import styles from "./page.module.css";
+import ContactForm from "./ContactForm";
 
 const src =
     "/images/whats-included-in-a-professional-house-cleaning-checklist-included-343704.jpg";
@@ -129,84 +130,7 @@ export default function KontaktPage() {
                         priority!
                     </p>
 
-                    <form className={styles.contactForm} noValidate>
-                        {/* name */}
-                        <label htmlFor="name" className={styles.formLabel}>
-                            name <span className={styles.required}>*</span>
-                        </label>
-                        <input
-                            id="name"
-                            name="name"
-                            type="text"
-                            required
-                            placeholder="name"
-                            className={styles.formInput}
-                            autoComplete="name"
-                        />
-
-                        {/* email */}
-                        <label htmlFor="email" className={styles.formLabel}>
-                            e-mail <span className={styles.required}>*</span>
-                        </label>
-                        <input
-                            id="email"
-                            name="email"
-                            type="email"
-                            required
-                            placeholder="e-mail"
-                            className={styles.formInput}
-                            autoComplete="email"
-                            inputMode="email"
-                        />
-
-                        {/* phone */}
-                        <label htmlFor="phone" className={styles.formLabel}>
-                            Telephone number{" "}
-                            <span className={styles.required}>*</span>
-                        </label>
-                        <input
-                            id="phone"
-                            name="phone"
-                            type="tel"
-                            required
-                            placeholder="+49 9192365654"
-                            className={styles.formInput}
-                            autoComplete="tel"
-                            inputMode="tel"
-                            pattern="^\\+?[0-9\\s\\-()]{7,}$"
-                            title="Please enter a valid phone number"
-                        />
-
-                        {/* message */}
-                        <label htmlFor="message" className={styles.formLabel}>
-                            News <span className={styles.required}>*</span>
-                        </label>
-                        <textarea
-                            id="message"
-                            name="message"
-                            required
-                            placeholder="News"
-                            className={styles.formTextarea}
-                            rows={6}
-                        />
-
-                        {/* files */}
-                        <label htmlFor="files" className={styles.formLabel}>
-                            Upload documents
-                        </label>
-                        <input
-                            id="files"
-                            name="files"
-                            type="file"
-                            className={styles.formFile}
-                            multiple
-                        />
-
-                        {/* submit */}
-                        <button type="submit" className={styles.formSubmit}>
-                            SEND
-                        </button>
-                    </form>
+                   <ContactForm />
                 </div>
             </div>
         </div>

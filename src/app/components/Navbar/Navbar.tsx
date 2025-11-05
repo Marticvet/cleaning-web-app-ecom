@@ -59,8 +59,8 @@ export default function Navbar() {
                 <Link className={styles.navButton} href="/ueber-uns">
                     Über uns
                 </Link>
-                <Link className={styles.navButton} href="/leistungen">
-                    Leistungen
+                <Link className={styles.navButton} href="/dienstleistungen">
+                    Dienstleistungen
                 </Link>
                 <Link className={styles.navButton} href="/kontakt">
                     Kontakt

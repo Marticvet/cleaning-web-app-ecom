@@ -47,7 +47,12 @@ export default function Navbar() {
         <header className={styles.navbarWrapper} ref={headerRef}>
             <div className={styles.brand}>
                 <Link href="/">
-                <Image src={"/images/cleaning-tools.png"} alt="This is company's logo" width={42} height={42}/>
+                    <Image
+                        src={"/images/cleaning-tools.png"}
+                        alt="This is company's logo"
+                        width={42}
+                        height={42}
+                    />
                 </Link>
             </div>
 

@@ -18,12 +18,17 @@
     /* add this line */
 }
 
+.brand {
+    margin-left: 16px;
+}
+
 /* Brand */
 .brand a {
     color: #0f172a;
     text-decoration: none;
     font-weight: 800;
     letter-spacing: .2px;
+    /* margin-left: 44px; */
 }
 
 /* Desktop links */

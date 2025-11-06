@@ -8,11 +8,14 @@
     background-color: rgb(251, 251, 251);
     width: 100%;
     padding: 0 16px;
-    height: 2.8rem;
+    /* height: 2.8rem; */
     box-shadow:
         0 8px 24px rgba(0, 0, 0, 0.08),
         0 2px 6px rgba(0, 0, 0, 0.06);
     backdrop-filter: saturate(140%) blur(6px);
+    height: 64px;
+    --nav-height: 64px;
+    /* add this line */
 }
 
 /* Brand */
@@ -33,12 +36,13 @@
 }
 
 .navButton {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     color: #0f172a;
     text-decoration: none;
     padding: 6px 10px;
     border-radius: 8px;
     transition: background-color .15s ease, color .15s ease;
+    font-weight: 600;
 }
 
 .navButton:hover {
@@ -48,8 +52,8 @@
 /* Hamburger button (hidden on desktop) */
 .hamburger {
     display: none;
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     padding: 8px;
     border: 0;
     background: transparent;
@@ -74,7 +78,7 @@
 /* Mobile menu panel (hidden by default) */
 .mobileMenu {
     position: fixed;
-    top: 2.8rem;
+    top: var(--nav-height);
     /* directly under navbar */
     left: 0;
     right: 0;
@@ -113,75 +117,53 @@
 }
 
 /* ---------- Under 993px: hamburger on, desktop links off ---------- */
-@media (max-width: 992px) {
-    .navButtonsWrapper {
-        display: none;
-    }
-
-    .hamburger {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .mobileMenu {
-        display: flex;
-    }
-
-    .mobileMenu.open {
-        transform: translateY(0);
-        opacity: 1;
-        pointer-events: auto;
-    }
-}
-
-@media (max-width: 992px) {
-    .navButtonsWrapper {
-        display: none;
-    }
-
-    .hamburger {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .mobileMenu {
-        display: flex;
-    }
-
-    .mobileMenu.open {
-        transform: translateY(0);
-        opacity: 1;
-        pointer-events: auto;
-    }
-}
-
 /* --- Mobile menu: shadow + rounded bottom corners when visible --- */
 @media (max-width: 992px) {
-    .mobileMenu {
-      /* keep your existing positioning; just prep for rounded corners */
-      border-bottom: 1px solid rgba(15, 23, 42, 0.08);
-      border-radius: 0 0 8px 8px;   /* bottom corners rounded */
-      overflow: hidden;             /* clip inner corners */
-      /* smooth visual transition */
-      transition: transform .18s ease, opacity .18s ease, box-shadow .18s ease;
+    .navButtonsWrapper {
+        display: none;
     }
-  
+
+    .hamburger {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mobileMenu {
+        display: flex;
+
+        /* keep your existing positioning; just prep for rounded corners */
+        border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+        border-radius: 0 0 8px 8px;
+        /* bottom corners rounded */
+        overflow: hidden;
+        /* clip inner corners */
+        /* smooth visual transition */
+        transition: transform .18s ease, opacity .18s ease, box-shadow .18s ease;
+    }
+
     /* only show shadow when open */
     .mobileMenu.open {
-      box-shadow:
-        0 14px 28px rgba(0, 0, 0, 0.12),
-        0 4px 12px rgba(0, 0, 0, 0.08);
+        box-shadow:
+            0 14px 28px rgba(0, 0, 0, 0.12),
+            0 4px 12px rgba(0, 0, 0, 0.08);
+
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
     }
-  
+
     /* --- Link separators (solid) --- */
     .mobileLink {
-      padding: 14px 12px;                  /* a hair more touch target */
-      border-bottom: 1px solid #e5e7eb;    /* solid separator */
+        padding: 14px 12px;
+        /* a hair more touch target */
+        border-bottom: 1px solid #e5e7eb;
+        /* solid separator */
     }
+
     .mobileLink:last-child {
-      border-bottom: none;                 /* no line after last item */
+        border-bottom: none;
+        /* no line after last item */
     }
-  }
-  
+
+}
